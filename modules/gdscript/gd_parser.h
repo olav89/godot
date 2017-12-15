@@ -35,7 +35,18 @@
 #include "map.h"
 #include "object.h"
 
-class GDParser {
+/*
+ * CUSTOM CODE START
+ * */
+#include "script_language.h"
+class GDParser : public Reference {
+OBJ_TYPE(GDParser,Reference);
+protected:
+	static void _bind_methods(); // to bind methods to GDScript
+/*
+ * CUSTOM CODE END
+ * */
+
 public:
 	struct Node {
 

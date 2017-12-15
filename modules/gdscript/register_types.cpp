@@ -30,6 +30,10 @@
 #include "register_types.h"
 
 #include "gd_script.h"
+
+// CUSTOM INCLUDE
+#include "gd_parser.h"
+
 #include "io/file_access_encrypted.h"
 #include "io/resource_loader.h"
 #include "os/file_access.h"
@@ -141,6 +145,9 @@ void register_gdscript_types() {
 	ResourceLoader::add_resource_format_loader(resource_loader_gd);
 	resource_saver_gd = memnew(ResourceFormatSaverGDScript);
 	ResourceSaver::add_resource_format_saver(resource_saver_gd);
+	
+	// CUSTOM TYPE
+	ObjectTypeDB::register_type<GDParser>();
 
 #ifdef TOOLS_ENABLED
 

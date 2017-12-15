@@ -34,6 +34,16 @@
 #include "print_string.h"
 #include "script_language.h"
 
+/*
+ * CUSTOM CODE START
+ * */
+void GDParser::_bind_methods() {
+	ObjectTypeDB::bind_method(_MD("parse","p_code", "p_base_path", "p_just_validate", "p_self_path", "p_for_completion"),&GDParser::parse);
+}
+/*
+ * CUSTOM CODE END
+ * */
+ 
 template <class T>
 T *GDParser::alloc_node() {
 
