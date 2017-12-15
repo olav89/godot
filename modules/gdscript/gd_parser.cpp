@@ -38,7 +38,16 @@
  * CUSTOM CODE START
  * */
 void GDParser::_bind_methods() {
-	ObjectTypeDB::bind_method(_MD("parse","p_code", "p_base_path", "p_just_validate", "p_self_path", "p_for_completion"),&GDParser::parse);
+	ObjectTypeDB::bind_method(_MD("parse","p_code",
+	                              "p_base_path", "p_just_validate",
+	                              "p_self_path", "p_for_completion"),
+	                          &GDParser::parse);
+	ObjectTypeDB::bind_method(_MD("get_error"),
+	                          &GDParser::get_error);
+	ObjectTypeDB::bind_method(_MD("get_error_line"),
+	                          &GDParser::get_error_line);
+	ObjectTypeDB::bind_method(_MD("get_error_column"),
+	                          &GDParser::get_error_column);
 }
 /*
  * CUSTOM CODE END
